@@ -8,7 +8,7 @@
     name="description"
     content="周进辉，嵌入式与智能硬件工程师。关注 STM32、ESP32、PLC、智能硬件与软硬件协同开发。"
   >
-  <title>周进辉｜嵌入式与智能硬件工程师</title>
+  <title>周进辉｜智能硬件与工业控制工程师</title>
   <style>
     :root {
       color-scheme: light;
@@ -261,9 +261,6 @@
       padding: 24px 26px;
     }
 
-    .project-card + .project-card,
-    .experience-card + .experience-card { margin-top: 14px; }
-
     .item-top {
       display: flex;
       flex-wrap: wrap;
@@ -378,6 +375,13 @@
       .about-card, .project-card, .experience-card { padding: 20px; }
       .contact { padding: 22px; }
     }
+    
+.stack-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -456,7 +460,7 @@
   </div>
 </section>
 
-    <section id="projects">
+    <section id="projects" class="stack-section">
       <div class="section-heading">
         <h2>项目经历</h2><span>PROJECTS</span>
       </div>
@@ -474,7 +478,8 @@
     <span class="tag">PLC</span><span class="tag">RS485</span>
     <span class="tag">现场调试</span>
   </div>
-</article>
+      </article>
+
       <article class="card project-card">
         <div class="item-top">
           <h3>基于 FPGA 的 NAND Flash 并行访问接口设计</h3>
@@ -510,7 +515,7 @@
       </article>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="stack-section">
       <div class="section-heading">
         <h2>实习与其他经历</h2><span>EXPERIENCE</span>
       </div>
