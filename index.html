@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101a24">
   <meta
     name="description"
-    content="周进辉，嵌入式与智能硬件工程师。关注 STM32、FPGA、智能硬件与软硬件协同开发。"
+    content="周进辉，嵌入式与智能硬件工程师。关注 STM32、FPGA、PLC、智能硬件与软硬件协同开发。"
   >
   <title>周进辉｜嵌入式与智能硬件工程师</title>
   <style>
@@ -432,36 +432,49 @@
         </div>
       </div>
     </section>
-
-    <section id="skills">
-      <div class="section-heading">
-        <h2>技术技能</h2><span>SKILLS</span>
-      </div>
-      <div class="skills-grid">
-        <article class="card skill-card">
-          <h3>编程与平台</h3>
-          <p>C、C++11、Verilog、Python（基础）；STM32、ESP8266、Arduino、51 单片机</p>
-        </article>
-        <article class="card skill-card">
-          <h3>通信协议</h3>
-          <p>UART（熟悉）；I²C、SPI；了解 RS232、Modbus</p>
-        </article>
-        <article class="card skill-card">
-          <h3>开发工具</h3>
-          <p>熟悉 Keil、Quartus、VS Code；了解 Visual Studio、GCC；接触 Vim、CubeMX</p>
-        </article>
-        <article class="card skill-card">
-          <h3>硬件与调试</h3>
-          <p>熟练使用嘉立创 EDA、示波器和万用表；了解 Altium Designer、KiCad；具备 ADC 采样与信号调试经验</p>
-        </article>
-      </div>
-    </section>
+<section id="skills">
+  <div class="section-heading">
+    <h2>技术技能</h2><span>SKILLS</span>
+  </div>
+  <div class="skills-grid">
+    <article class="card skill-card">
+      <h3>编程与平台</h3>
+      <p>C、C++11、Python（基础）；STM32、ESP8266、Arduino、51 单片机；了解 PLC 程序调整与调试</p>
+    </article>
+    <article class="card skill-card">
+      <h3>通信协议</h3>
+      <p>熟悉 UART、RS485、RS232、CAN、I²C、SPI；了解 Modbus</p>
+    </article>
+    <article class="card skill-card">
+      <h3>开发工具</h3>
+      <p>熟悉 STM32CubeMX、STM32CubeIDE、Keil、VS Code、Linux；了解 Visual Studio、GCC；接触 Vim</p>
+    </article>
+    <article class="card skill-card">
+      <h3>硬件与调试</h3>
+      <p>熟练使用嘉立创 EDA、示波器、逻辑分析仪和万用表；了解 Altium Designer；具备 ADC 采样与信号调试经验</p>
+    </article>
+  </div>
+</section>
 
     <section id="projects">
       <div class="section-heading">
         <h2>项目经历</h2><span>PROJECTS</span>
       </div>
-
+<article class="card experience-card">
+  <div class="item-top">
+    <h3>调试工程师</h3>
+    <div class="item-meta"><strong>西安航天赛能自动化科技有限公司</strong> · 2025.08—至今</div>
+  </div>
+  <ul>
+    <li>负责 PLC 程序的调整与修改，参与现场设备调试与联调。</li>
+    <li>深入理解 RS485 通信协议，完成设备间通信配置与问题排查。</li>
+    <li>参与自动化产线调试，积累现场问题定位与跨部门协作经验。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">PLC</span><span class="tag">RS485</span>
+    <span class="tag">现场调试</span>
+  </div>
+</article>
       <article class="card project-card">
         <div class="item-top">
           <h3>基于 FPGA 的 NAND Flash 并行访问接口设计</h3>
@@ -524,6 +537,21 @@
           <li>负责公众号内容撰写与视觉设计，积累跨职能协作经验。</li>
         </ul>
       </article>
+      <article class="card project-card">
+  <div class="item-top">
+    <h3>基于 STM32F103 的溺水自动求助设备</h3>
+    <div class="item-meta"><strong>个人项目</strong> · 2025.10—2025.11</div>
+  </div>
+  <ul>
+    <li>以 STM32F103 为主控，设计可穿戴溺水检测与自动求助装置。</li>
+    <li>实现溺水状态判定后自动充气、声光报警，并通过短信发送求助信息。</li>
+    <li>完成传感器采集、状态机判定与执行机构联动的软硬件协同调试。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">STM32F103</span><span class="tag">传感器</span>
+    <span class="tag">自动充气</span><span class="tag">短信报警</span>
+  </div>
+</article>
     </section>
 
     <section id="education">
@@ -533,7 +561,7 @@
       <div class="card education-card">
         <div>
           <h3>西安石油大学 · 测控技术与仪器 · 本科</h3>
-          <p>主修：嵌入式系统设计、单片机原理与应用、传感器与检测技术、电子技术基础、信号与系统、C 语言程序设计</p>
+          <p>主修：嵌入式系统设计、单片机原理与应用、传感器与检测技术、电子技术基础、信号与系统、、自动控制原理、C 语言程序设计</p>
         </div>
         <div class="education-date">2021.09—2025.07</div>
       </div>
@@ -547,7 +575,8 @@
         </div>
         <div class="contact-links">
           <a href="tel:15129705509">电话：15129705509</a>
-          <a href="mailto:z1130056752@qq.com">邮箱：z1130056752@qq.com</a>
+          <a href="mailto:1130056752@qq.com">邮箱：1130056752@qq.com</a>
+          <a href="mailto:zjh1130056752@outlook.com">邮箱：zjh1130056752@outlook.com</a>
         </div>
       </div>
     </section>
