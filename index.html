@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a24">
+  <meta
+    name="description"
+    content="周进辉，嵌入式与智能硬件工程师。关注 STM32、FPGA、智能硬件与软硬件协同开发。"
+  >
+  <title>周进辉｜嵌入式与智能硬件工程师</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17232d;
+      --muted: #64727c;
+      --paper: #f5f7f5;
+      --card: #ffffff;
+      --line: #e3e9e5;
+      --green: #70e0ad;
+      --green-dark: #177d56;
+      --navy: #101a24;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(112, 224, 173, .16), transparent 34%),
+        var(--navy);
+      color: #f5fbf7;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -100px;
+      bottom: -240px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(112, 224, 173, .18);
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 60px rgba(112, 224, 173, .035),
+                  0 0 0 120px rgba(112, 224, 173, .025);
+      pointer-events: none;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: #bdc9c8;
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      padding: 92px 0 100px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 20px;
+      color: var(--green);
+      font-size: .9rem;
+      font-weight: 650;
+      letter-spacing: .08em;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 14px;
+      color: #b7c5c2;
+      font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+      font-weight: 450;
+      letter-spacing: .01em;
+    }
+
+    .hero-intro {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: #c3cfcc;
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 19px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 8px;
+      color: #f5fbf7;
+      font-size: .94rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button.primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #10251c;
+    }
+
+    .button.secondary:hover { background: rgba(255, 255, 255, .08); }
+
+    main { padding: 30px 0 76px; }
+
+    section { padding: 48px 0 12px; }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -.025em;
+    }
+
+    .section-heading span {
+      color: var(--green-dark);
+      font-size: .77rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      box-shadow: 0 8px 28px rgba(22, 43, 32, .035);
+    }
+
+    .about-card { padding: 25px 28px; }
+
+    .about-card p {
+      max-width: 850px;
+      margin: 0;
+      color: #46545d;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .fact {
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fbfcfb;
+    }
+
+    .fact small {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .fact strong { font-size: .95rem; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .skill-card { padding: 20px 22px; }
+
+    .skill-card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .project-card,
+    .experience-card {
+      padding: 24px 26px;
+    }
+
+    .project-card + .project-card,
+    .experience-card + .experience-card { margin-top: 14px; }
+
+    .item-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px 20px;
+      margin-bottom: 12px;
+    }
+
+    .item-top h3 {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .item-meta {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .item-meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .project-card ul,
+    .experience-card ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: #53616a;
+    }
+
+    li + li { margin-top: 6px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border: 1px solid #dcebe3;
+      border-radius: 999px;
+      background: #f2faf5;
+      color: #26714f;
+      font-size: .78rem;
+    }
+
+    .education-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 18px;
+      padding: 22px 24px;
+    }
+
+    .education-card h3 { margin: 0; font-size: 1.05rem; }
+    .education-card p { margin: 5px 0 0; color: var(--muted); }
+    .education-date { color: var(--muted); font-size: .9rem; }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 26px 28px;
+      background: var(--navy);
+      color: #f5fbf7;
+    }
+
+    .contact h2 { margin: 0 0 5px; font-size: 1.35rem; }
+    .contact p { margin: 0; color: #bdc9c8; }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-links a {
+      padding: 9px 13px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 8px;
+      color: #f5fbf7;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    footer {
+      padding: 25px 0 0;
+      color: #7d898e;
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 30px, var(--max-width)); }
+      .nav { min-height: 64px; }
+      .nav-links { gap: 14px; font-size: .82rem; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero-content { padding: 72px 0 78px; }
+      main { padding-top: 14px; }
+      section { padding-top: 38px; }
+      .facts, .skills-grid { grid-template-columns: 1fr; }
+      .about-card, .project-card, .experience-card { padding: 20px; }
+      .contact { padding: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="wrap">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#home" style="text-decoration:none">周进辉</a>
+        <div class="nav-links">
+          <a href="#about">简介</a>
+          <a href="#skills">技能</a>
+          <a href="#projects">项目</a>
+          <a href="#experience">经历</a>
+          <a href="#contact">联系</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">PERSONAL PORTFOLIO · 2026</p>
+        <h1>周进辉<span>嵌入式开发 · 智能硬件工程师</span></h1>
+        <p class="hero-intro">
+          具备嵌入式系统开发与智能硬件设计实践经验，关注从电路设计、
+          PCB 绘制到固件开发和系统调试的完整流程。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">查看项目</a>
+          <a class="button secondary" href="mailto:1130056752@qq.com">联系我</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <div class="section-heading">
+        <h2>个人简介</h2><span>ABOUT</span>
+      </div>
+      <div class="card about-card">
+        <p>
+          熟悉 STM32、ESP8266 等平台，掌握 UART、I²C 等通信协议，
+          能参与完成原理图设计、PCB 绘制、固件开发与系统调试。
+          热衷于边缘智能与人机交互方向，具备工程实践能力与跨团队沟通能力。
+        </p>
+        <div class="facts">
+          <div class="fact"><small>教育背景</small><strong>西安石油大学 · 本科</strong></div>
+          <div class="fact"><small>专业</small><strong>测控技术与仪器</strong></div>
+          <div class="fact"><small>求职方向</small><strong>嵌入式 / 智能硬件 / IoT</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading">
+        <h2>技术技能</h2><span>SKILLS</span>
+      </div>
+      <div class="skills-grid">
+        <article class="card skill-card">
+          <h3>编程与平台</h3>
+          <p>C、C++11、Verilog、Python（基础）；STM32、ESP8266、Arduino、51 单片机</p>
+        </article>
+        <article class="card skill-card">
+          <h3>通信协议</h3>
+          <p>UART（熟悉）；I²C、SPI；了解 RS232、Modbus</p>
+        </article>
+        <article class="card skill-card">
+          <h3>开发工具</h3>
+          <p>熟悉 Keil、Quartus、VS Code；了解 Visual Studio、GCC；接触 Vim、CubeMX</p>
+        </article>
+        <article class="card skill-card">
+          <h3>硬件与调试</h3>
+          <p>熟练使用嘉立创 EDA、示波器和万用表；了解 Altium Designer、KiCad；具备 ADC 采样与信号调试经验</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>项目经历</h2><span>PROJECTS</span>
+      </div>
+
+      <article class="card project-card">
+        <div class="item-top">
+          <h3>基于 FPGA 的 NAND Flash 并行访问接口设计</h3>
+          <div class="item-meta"><strong>毕业设计</strong> · 2025.01—2025.06</div>
+        </div>
+        <ul>
+          <li>使用 Verilog 在 FPGA 平台实现 NAND Flash 并行访问接口，支持 ID 读取、数据读写与擦除操作。</li>
+          <li>设计状态机控制流程，提升访问过程的稳定性与可维护性。</li>
+          <li>独立完成 Flash 模块电路设计与 PCB 绘制，使用嘉立创 EDA 完成原理图设计与打样。</li>
+          <li>采用模块化设计思路，提升代码复用性与后续维护效率。</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">FPGA</span><span class="tag">Verilog</span>
+          <span class="tag">NAND Flash</span><span class="tag">PCB</span>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="item-top">
+          <h3>嵌入式智能冰箱温湿度控制系统</h3>
+          <div class="item-meta"><strong>北京华清远见科技发展有限公司西安分公司</strong> · 2024.07—2024.08</div>
+        </div>
+        <ul>
+          <li>以 STM32F407 为核心，通过 I²C 采集温湿度传感器数据，并结合 ADC 进行模拟信号处理。</li>
+          <li>设计状态机控制逻辑，实现制冷系统控制与系统响应优化。</li>
+          <li>在 Linux 环境下使用 C++11 开发嵌入式应用，并参与软硬件联调。</li>
+          <li>使用示波器、万用表进行信号分析，具备 UART 调试和 RS232 协议基础。</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">STM32F407</span><span class="tag">C++11</span>
+          <span class="tag">I²C</span><span class="tag">ADC</span><span class="tag">Linux</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <div class="section-heading">
+        <h2>实习与其他经历</h2><span>EXPERIENCE</span>
+      </div>
+
+      <article class="card experience-card">
+        <div class="item-top">
+          <h3>电子工程实习生</h3>
+          <div class="item-meta"><strong>西安赛宝工业技术研究院有限公司</strong> · 2021.04—2021.05</div>
+        </div>
+        <ul>
+          <li>参与电容、电阻高温测试，进行电路焊接与调试，熟悉常见电子元件的性能与使用方法。</li>
+          <li>使用 Arduino、Keil、Quartus 等工具，完成 20 余套实验设备的程序烧写与功能验证。</li>
+          <li>参与打印设备驱动安装与维护。</li>
+        </ul>
+      </article>
+
+      <article class="card experience-card">
+        <div class="item-top">
+          <h3>校园工作室负责人</h3>
+          <div class="item-meta"><strong>百度网盘校园工作室</strong> · 2024.07—2025.01</div>
+        </div>
+        <ul>
+          <li>参与社团运营、活动策划与宣传，锻炼沟通协调和项目管理能力。</li>
+          <li>负责公众号内容撰写与视觉设计，积累跨职能协作经验。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="education">
+      <div class="section-heading">
+        <h2>教育背景</h2><span>EDUCATION</span>
+      </div>
+      <div class="card education-card">
+        <div>
+          <h3>西安石油大学 · 测控技术与仪器 · 本科</h3>
+          <p>主修：嵌入式系统设计、单片机原理与应用、传感器与检测技术、电子技术基础、信号与系统、C 语言程序设计</p>
+        </div>
+        <div class="education-date">2021.09—2025.07</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card contact">
+        <div>
+          <h2>一起聊聊嵌入式与智能硬件</h2>
+          <p>欢迎联系我，交流项目或职业机会。</p>
+        </div>
+        <div class="contact-links">
+          <a href="tel:15129705509">电话：15129705509</a>
+          <a href="mailto:z1130056752@qq.com">邮箱：z1130056752@qq.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 周进辉 · Embedded &amp; Hardware Engineering</footer>
+  </main>
+</body>
+</html>
